@@ -1,0 +1,713 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>عن مؤسسة الإدارة العربية العقارية</title>
+  <style>
+    @font-face {
+      font-family: "TheSans";
+      src: url("about-assets/The-Sans-Plain.otf") format("opentype");
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: "TheSans";
+      src: url("about-assets/TheSans-Bold.otf") format("opentype");
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    :root {
+      --green: #183f41;
+      --green-soft: #244f51;
+      --gold: #d6af4e;
+      --ink: #1d2e2d;
+      --muted: #657272;
+      --line: #e8e3d5;
+      --paper: #fbfaf6;
+      --white: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: "TheSans", Tahoma, Arial, sans-serif;
+      line-height: 1.8;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .page {
+      min-height: 100vh;
+      overflow: hidden;
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      border-bottom: 1px solid rgba(209, 172, 87, 0.24);
+      background: rgba(251, 250, 246, 0.92);
+      backdrop-filter: blur(14px);
+    }
+
+    .nav-inner {
+      width: min(1160px, calc(100% - 32px));
+      min-height: 74px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      min-width: 0;
+      font-weight: 700;
+      color: var(--green);
+    }
+
+    .brand img {
+      width: 172px;
+      height: auto;
+      transform: none;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      color: var(--green-soft);
+      font-size: 15px;
+      white-space: nowrap;
+    }
+
+    .nav-links a {
+      padding: 10px 0;
+      border-bottom: 2px solid transparent;
+    }
+
+    .nav-links a:hover {
+      border-color: var(--gold);
+    }
+
+    .hero {
+      position: relative;
+      min-height: calc(100vh - 74px);
+      display: grid;
+      align-items: center;
+      padding: 72px 0 96px;
+      background:
+        linear-gradient(135deg, rgba(12, 61, 63, 0.96), rgba(24, 63, 65, 0.9)),
+        url("about-assets/hero-application.jpg") center/cover no-repeat;
+      color: var(--white);
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(90deg, rgba(12, 61, 63, 0.16), rgba(12, 61, 63, 0.9)),
+        radial-gradient(circle at 18% 20%, rgba(209, 172, 87, 0.16), transparent 34%);
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset-inline-start: -8vw;
+      bottom: -18vw;
+      width: 54vw;
+      aspect-ratio: 1;
+      background: url("about-assets/symbol.svg") center/contain no-repeat;
+      opacity: 0.11;
+    }
+
+    .hero-inner,
+    .section-inner {
+      position: relative;
+      width: min(1160px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .hero-content {
+      max-width: 720px;
+    }
+
+    .eyebrow {
+      margin: 0 0 16px;
+      color: var(--gold);
+      font-size: 16px;
+      font-weight: 700;
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin-top: 0;
+    }
+
+    h1 {
+      margin-bottom: 22px;
+      font-size: clamp(42px, 7vw, 78px);
+      line-height: 1.18;
+      letter-spacing: 0;
+    }
+
+    .hero p {
+      max-width: 660px;
+      margin-bottom: 34px;
+      color: rgba(255, 255, 255, 0.86);
+      font-size: clamp(18px, 2.2vw, 24px);
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .btn {
+      min-height: 48px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 12px 22px;
+      border: 1px solid rgba(255, 255, 255, 0.34);
+      border-radius: 6px;
+      font-weight: 700;
+    }
+
+    .btn.primary {
+      border-color: var(--gold);
+      background: var(--gold);
+      color: var(--green);
+    }
+
+    .section {
+      padding: 88px 0;
+    }
+
+    .section.alt {
+      background: var(--white);
+    }
+
+    .intro-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.9fr);
+      gap: 56px;
+      align-items: start;
+    }
+
+    .section-title {
+      margin-bottom: 18px;
+      color: var(--green);
+      font-size: clamp(30px, 4vw, 48px);
+      line-height: 1.25;
+    }
+
+    .lead {
+      color: var(--muted);
+      font-size: 19px;
+    }
+
+    .identity-panel {
+      border-right: 4px solid var(--gold);
+      padding: 28px;
+      background: linear-gradient(180deg, rgba(209, 172, 87, 0.12), rgba(12, 61, 63, 0.05));
+    }
+
+    .identity-panel img {
+      width: 260px;
+      margin-bottom: 26px;
+      transform: none;
+    }
+
+    .identity-panel p {
+      margin-bottom: 0;
+      color: var(--green-soft);
+      font-weight: 700;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1px;
+      margin-top: 54px;
+      background: var(--line);
+      border: 1px solid var(--line);
+    }
+
+    .stat {
+      min-height: 132px;
+      padding: 28px;
+      background: var(--paper);
+    }
+
+    .stat strong {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--gold);
+      font-size: 34px;
+      line-height: 1;
+    }
+
+    .stat span {
+      color: var(--green);
+      font-weight: 700;
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .service {
+      min-height: 220px;
+      padding: 28px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--white);
+    }
+
+    .service-icon {
+      width: 44px;
+      height: 44px;
+      margin-bottom: 24px;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(209, 172, 87, 0.5);
+      border-radius: 50%;
+      color: var(--gold);
+      font-size: 22px;
+      font-weight: 700;
+    }
+
+    .service h3 {
+      margin-bottom: 12px;
+      color: var(--green);
+      font-size: 22px;
+    }
+
+    .service p {
+      margin-bottom: 0;
+      color: var(--muted);
+    }
+
+    .values {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1px;
+      background: rgba(209, 172, 87, 0.36);
+      border: 1px solid rgba(209, 172, 87, 0.36);
+    }
+
+    .value {
+      min-height: 168px;
+      padding: 26px;
+      background: var(--green);
+      color: var(--white);
+    }
+
+    .value h3 {
+      margin-bottom: 10px;
+      color: var(--gold);
+      font-size: 21px;
+    }
+
+    .value p {
+      margin-bottom: 0;
+      color: rgba(255, 255, 255, 0.78);
+      font-size: 15px;
+    }
+
+    .process {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 22px;
+      counter-reset: step;
+    }
+
+    .step {
+      position: relative;
+      padding-top: 52px;
+      border-top: 1px solid var(--line);
+    }
+
+    .step::before {
+      counter-increment: step;
+      content: counter(step, decimal-leading-zero);
+      position: absolute;
+      top: -20px;
+      inset-inline-start: 0;
+      width: 44px;
+      height: 44px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--gold);
+      color: var(--green);
+      font-weight: 700;
+    }
+
+    .step h3 {
+      margin-bottom: 10px;
+      color: var(--green);
+      font-size: 20px;
+    }
+
+    .step p {
+      margin-bottom: 0;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .cta {
+      padding: 72px 0;
+      background: var(--green);
+      color: var(--white);
+    }
+
+    .cta-box {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 32px;
+    }
+
+    .cta h2 {
+      margin-bottom: 10px;
+      font-size: clamp(28px, 4vw, 44px);
+    }
+
+    .cta p {
+      max-width: 680px;
+      margin-bottom: 0;
+      color: rgba(255, 255, 255, 0.76);
+    }
+
+    .footer {
+      padding: 28px 0;
+      border-top: 1px solid rgba(209, 172, 87, 0.28);
+      background: var(--paper);
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .footer-inner {
+      width: min(1160px, calc(100% - 32px));
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .footer img {
+      width: 150px;
+      transform: none;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1px;
+      margin-top: 34px;
+      background: rgba(214, 175, 78, 0.36);
+      border: 1px solid rgba(214, 175, 78, 0.36);
+    }
+
+    .contact-item {
+      min-height: 122px;
+      padding: 24px;
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .contact-item span {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--gold);
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .contact-item strong {
+      display: block;
+      color: var(--white);
+      font-size: 18px;
+    }
+
+    @media (max-width: 920px) {
+      .nav-inner {
+        min-height: 68px;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        min-height: auto;
+        padding: 84px 0;
+      }
+
+      .intro-grid,
+      .services,
+      .values,
+      .process,
+      .contact-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .stats {
+        grid-template-columns: 1fr;
+      }
+
+      .cta-box,
+      .footer-inner {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .brand img {
+        width: 96px;
+      }
+
+      .section {
+        padding: 64px 0;
+      }
+
+      .intro-grid,
+      .services,
+      .values,
+      .process,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .service,
+      .identity-panel,
+      .stat,
+      .value {
+        padding: 22px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="nav" aria-label="التنقل الرئيسي">
+      <div class="nav-inner">
+        <a class="brand" href="#top" aria-label="مؤسسة الإدارة العربية العقارية">
+          <img src="about-assets/logo-full.jpg" alt="شعار مؤسسة الإدارة العربية العقارية">
+        </a>
+        <nav class="nav-links">
+          <a href="#about">عن المؤسسة</a>
+          <a href="#services">الخدمات</a>
+          <a href="#values">القيم</a>
+          <a href="#workflow">منهجية العمل</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-inner">
+          <div class="hero-content">
+            <p class="eyebrow">إدارة عقارية بهوية عربية رصينة</p>
+            <h1 id="hero-title">مؤسسة الإدارة العربية العقارية</h1>
+            <p>
+              ندير العقارات بمنهج واضح يجمع بين الحضور المهني، المتابعة اليومية، وتنظيم العمليات المالية والإدارية بما يحفظ قيمة الأصل ويرفع جودة تجربة المستفيد.
+            </p>
+            <div class="actions">
+              <a class="btn primary" href="#services">استعراض الخدمات</a>
+              <a class="btn" href="#workflow">كيف نعمل</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="about">
+        <div class="section-inner">
+          <div class="intro-grid">
+            <div>
+              <p class="eyebrow">عن المؤسسة</p>
+              <h2 class="section-title">شريك إداري يحوّل العقار إلى أصل منظم وقابل للنمو.</h2>
+              <p class="lead">
+                مؤسسة الإدارة العربية العقارية تعمل على إدارة وتشغيل العقارات من خلال منظومة تجمع المتابعة الميدانية، تنظيم المستندات، تحصيل الإيرادات، ضبط المصروفات، وإدارة التواصل مع الملاك والمستأجرين.
+              </p>
+              <p>
+                نركز على وضوح الإجراءات وسرعة الاستجابة، مع حضور مهني يسهّل على الملاك والمستأجرين معرفة الجهة المسؤولة والتواصل معها بثقة.
+              </p>
+            </div>
+            <aside class="identity-panel" aria-label="هوية المؤسسة">
+              <img src="about-assets/logo-full.jpg" alt="هوية مؤسسة الإدارة العربية العقارية">
+              <p>«يدار هذا العقار من قبل مؤسسة الإدارة العربية العقارية»</p>
+            </aside>
+          </div>
+
+          <div class="stats" aria-label="محاور العمل">
+            <div class="stat">
+              <strong>01</strong>
+              <span>إدارة وتشغيل العقارات</span>
+            </div>
+            <div class="stat">
+              <strong>02</strong>
+              <span>تنظيم مالي ومحاسبي</span>
+            </div>
+            <div class="stat">
+              <strong>03</strong>
+              <span>تواصل رسمي وهوية موحدة</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section alt" id="services">
+        <div class="section-inner">
+          <p class="eyebrow">الخدمات</p>
+          <h2 class="section-title">خدمات مصممة لدورة حياة العقار اليومية.</h2>
+          <div class="services">
+            <article class="service">
+              <div class="service-icon">⌂</div>
+              <h3>إدارة العقارات</h3>
+              <p>متابعة تشغيل العقار، تنظيم العلاقة مع المستأجرين، وتنسيق الأعمال اليومية التي تحافظ على جاهزية المبنى.</p>
+            </article>
+            <article class="service">
+              <div class="service-icon">✓</div>
+              <h3>العقود والتحصيل</h3>
+              <p>إدارة إجراءات التحصيل وسندات القبض والصرف، مع توثيق واضح يساعد على متابعة الالتزامات المالية.</p>
+            </article>
+            <article class="service">
+              <div class="service-icon">↗</div>
+              <h3>رفع كفاءة الأصل</h3>
+              <p>قراءة احتياجات العقار وتقديم حلول تشغيلية تحسن التجربة وتحافظ على القيمة الاستثمارية.</p>
+            </article>
+            <article class="service">
+              <div class="service-icon">☏</div>
+              <h3>التواصل وخدمة العملاء</h3>
+              <p>قنوات تواصل واضحة للملاك والمستأجرين، ورسائل موحدة تعكس احترافية المؤسسة في كل نقطة تماس.</p>
+            </article>
+            <article class="service">
+              <div class="service-icon">▣</div>
+              <h3>المراسلات الرسمية</h3>
+              <p>استخدام نماذج مراسلات وهوية موحدة تشمل الخطابات، الفولدرات، الأختام، والبطاقات التعريفية.</p>
+            </article>
+            <article class="service">
+              <div class="service-icon">◈</div>
+              <h3>حوكمة التشغيل</h3>
+              <p>تنظيم الوثائق والإجراءات بطريقة تساعد على وضوح المسؤوليات وسرعة اتخاذ القرار.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="values">
+        <div class="section-inner">
+          <p class="eyebrow">قيمنا</p>
+          <h2 class="section-title">ثقة، وضوح، ومتابعة لا تنقطع.</h2>
+          <div class="values">
+            <article class="value">
+              <h3>الأمانة</h3>
+              <p>التعامل مع العقار كأصل يستحق الحفظ والشفافية في كل إجراء.</p>
+            </article>
+            <article class="value">
+              <h3>الاحترافية</h3>
+              <p>لغة موحدة، مستندات واضحة، وحضور بصري يعزز ثقة العملاء.</p>
+            </article>
+            <article class="value">
+              <h3>الاستجابة</h3>
+              <p>متابعة البلاغات والاحتياجات اليومية بسرعة واهتمام.</p>
+            </article>
+            <article class="value">
+              <h3>الاستدامة</h3>
+              <p>قرارات تشغيلية تدعم قيمة العقار على المدى الطويل.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section alt" id="workflow">
+        <div class="section-inner">
+          <p class="eyebrow">منهجية العمل</p>
+          <h2 class="section-title">من الاستلام إلى التقرير، كل خطوة موثقة.</h2>
+          <div class="process">
+            <article class="step">
+              <h3>تقييم العقار</h3>
+              <p>مراجعة الحالة الحالية والاحتياجات التشغيلية وتحديد الأولويات.</p>
+            </article>
+            <article class="step">
+              <h3>تنظيم الملفات</h3>
+              <p>ترتيب المستندات والنماذج الرسمية وقنوات التواصل.</p>
+            </article>
+            <article class="step">
+              <h3>تشغيل ومتابعة</h3>
+              <p>إدارة الأعمال اليومية والتحصيل والمصروفات والبلاغات.</p>
+            </article>
+            <article class="step">
+              <h3>تقارير وقرارات</h3>
+              <p>تقديم مؤشرات واضحة تساعد المالك على المتابعة واتخاذ القرار.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="cta">
+        <div class="section-inner cta-box">
+          <div>
+            <h2>إدارة عقارك تبدأ بنظام واضح.</h2>
+            <p>للتواصل مع مؤسسة الإدارة العربية العقارية والاستفسار عن إدارة وتشغيل العقارات.</p>
+            <div class="contact-grid" aria-label="بيانات التواصل">
+              <div class="contact-item">
+                <span>المسؤول</span>
+                <strong>سليمان عبدالعزيز الحجيلي</strong>
+              </div>
+              <div class="contact-item">
+                <span>الهاتف</span>
+                <strong>0599953716</strong>
+              </div>
+              <div class="contact-item">
+                <span>الموقع</span>
+                <strong>المدينة المنورة - حي بدر - مقابل البناء في السوق المركزي</strong>
+              </div>
+            </div>
+          </div>
+          <a class="btn primary" href="#top">العودة للأعلى</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        <img src="about-assets/logo-full.jpg" alt="مؤسسة الإدارة العربية العقارية">
+        <span>© مؤسسة الإدارة العربية العقارية</span>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
